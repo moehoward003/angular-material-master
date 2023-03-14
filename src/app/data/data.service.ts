@@ -30,15 +30,15 @@ export class DataService {
       console.log('No Local Posts found. Intializing...');
       this.Posts = this.InitialPosts;
       localStorage.setItem('posts', JSON.stringify(this.Posts));
-      console.log('${Posts.length} posts were saved to local storage.');
+      console.log(`${this.Posts.length} posts were saved to local storage.`);
     }
     else
     {
-      console.log('Loaded ${Posts.length} posts from local storage.');
+      console.log(`Loaded ${this.Posts.length} posts from local storage.`);
     }
   }
 
-   getData(): Observable<Post[]> {
+  public getData(): Observable<Post[]> {
     console.log('getData() called...');
     return of<Post[]>(this.Posts);
   }

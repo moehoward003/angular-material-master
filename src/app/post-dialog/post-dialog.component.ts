@@ -16,12 +16,15 @@ export class PostDialogComponent {
     date_posted: new Date()
   };
   public event: EventEmitter<any> = new EventEmitter();
+  categories: any = [];
 
   constructor(
     public dialogRef: MatDialogRef<PostDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dataService: DataService
   ) {
+    console.log("In PostDialogComponent, dataService is: " + this.dataService);
+    this.categories = this.dataService.getCategories();
   }
 
   onNoClick(): void {
@@ -33,6 +36,4 @@ export class PostDialogComponent {
     this.event.emit({data: this.blogPost});
     this.dialogRef.close();
   }
-
-  categories = this.dataService.getCategories();
 }
