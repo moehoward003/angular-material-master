@@ -13,7 +13,7 @@ export class AuthService {
     clientID: 'AAQbG8REMxtSrmXQiPGcl3Uochf7OuHS',
     domain: 'bk-tmp.auth0.com',
     responseType: 'token',
-    redirectUri: 'http://localhost:4200/',
+    redirectUri: 'http://localhost:4201/',
     scope: 'openid'
   });
 
